@@ -7,6 +7,9 @@ import styled from 'styled-components'
 
 require("!style-loader!css-loader!./css/style.css");
 require("!style-loader!css-loader!./css/highlight.js/8.4.0/styles/monokai-sublime.css");
+//require("!style-loader!css-loader!./css/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.min.css");
+
+
 
 var STORE = new Store();
 var AppContext = {"store":STORE};
@@ -44,6 +47,19 @@ const Header=styled.div`
 
 
 `
+
+const Nav= styled.div`
+	display: flex;
+	flex-direction: row; 
+
+`
+
+const NavItem=styled.div`
+display: inline-block;
+padding: 1rem;
+font-size: 1em;
+`
+
 const Content=styled.div`
 `
 const Footer=styled.div`
@@ -57,20 +73,22 @@ const Layout = styled.div`
   grid-auto-columns: minmax(100px,auto);
   grid-column-gap:  1em;
   grid-row-gap: 1em;
-  padding: 0 20px;
+  //padding: 0 20px;
 
   & > div {
-    //background: #eee;
-    padding: 1em;
+   // background: #eee;
+   // padding: 1em;
+   //text-align: center;
+   width: 100%;
 
   }
 
   & > div:nth-child(odd){
-    //background: #ddd;
+   // background: #ddd;
+    //text-align: center;
+    width: 100%;
   }
 
-  
-  
 `
 
 class App extends React.Component {
@@ -79,9 +97,22 @@ class App extends React.Component {
 
       <Layout> 
   
-        <Header>  
-          <Link to="/">Go Home Again:  </Link>
-        </Header>
+        { /* <Header> 
+	        <Nav>
+	    	    <NavItem>
+	            <Link to="/">Go Home Again:  </Link>
+	    	    </NavItem>
+	    	    <NavItem>
+	    		    Posts 
+	    	    </NavItem>
+            <NavItem>
+	    		    Projects 
+	    	    </NavItem>
+            <NavItem>
+	    		    About 
+	    	    </NavItem>            
+          </Nav>
+        </Header> */ }
 
 
         <Content>  
@@ -100,10 +131,10 @@ class App extends React.Component {
 
 
         </Content> 
-
+{/* 
         <Footer>
           Footer 
-        </Footer>
+        </Footer> */}
       
 
         

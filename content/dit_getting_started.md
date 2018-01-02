@@ -1,11 +1,15 @@
 name: dit_getting_started
 title: Getting Started
-date: 2017-12-31 12:34:14.384598
+date: 2018-01-02 14:35:54.319411
 package: pkg_readme
 assets: config.json,bin,setup.py,pkg_readme
 ---
+# Getting Started
 
-# Publish a notebook 
+Markdown is a lightweight markup language for writing documents. It is lightweight, elegant and effective.  Dittio.  Is a markdown publishing system which generates a static blog from markdown documents and jupyter noteboks. 
+
+
+##  Publish a notebook 
 
 Create a new blog site.
 

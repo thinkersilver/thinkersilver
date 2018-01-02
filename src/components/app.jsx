@@ -122,7 +122,8 @@ class Index extends  React.Component{
 
        return  ( <PageLayout> 
                     <PageContent>
-                    <Toc index="/content/index.json"/>
+                        <h1> Posts </h1>
+                        <Toc index="/content/index.json"/>
                 </PageContent>
            
            </PageLayout>);
@@ -137,6 +138,10 @@ class Index extends  React.Component{
 
 }
 
+const Card=styled.div`
+
+
+`
 class Toc extends React.Component{
     constructor(props){
         super(props);
@@ -163,13 +168,14 @@ class Toc extends React.Component{
         if (this.state.index != null){
                 contents  = this.state.index.map(
                     (entry) => {
-                        console.log(entry);
-                        return <PageSummary title={entry.title} date={entry.date} file={entry.file} meta={entry}/>;
+                        return (<Card> 
+                                    <PageSummary title={entry.title} date={entry.date} file={entry.file} meta={entry}/>
+                                </Card>)
                     }
                 );
         }
         
-        return (<div> {this.props.index}
+        return (<div> 
                {contents}
                
             </div>);
@@ -211,13 +217,49 @@ function getContent(article){
 
 }
 
+const Row = styled.div`
+    display: flex;
+    & > div {
+        padding-right: 1em;        
+        //background: #929fad;
+         width:auto;
+         align-self: center;
+
+     
+       }
+     
+       & > div:nth-child(odd){
+        padding-right: 1em;
+        align-self: center;
+
+        //background: #e3e7ea;
+         width:auto;
+       }
+`
 class PageSummary extends React.Component{
     render(){
         console.log(this.props.file);
+        function assetLinks(meta){
+            
+            if (meta.assets != ""){
+                return (<div><a href="/assets"> <i class="fa fa-files-o fa-1x">  </i> </a></div>) 
+            }
+            return (<div></div>) 
+            
+        }
+
+        var assets = assetLinks(this.props.meta);
         return (
             <div> 
-                <div> {this.props.date} </div> 
-                <div> <Link to={"/page/" + this.props.file}  meta={this.props.meta}> {this.props.title} </Link> </div> 
+                <Row>  
+                    <div> <h3>{this.props.title}  </h3> </div>  
+                    {assets}    
+                </Row>
+                {/* <div> {this.props.date} </div> */ } 
+                <div>{this.props.meta.preview}</div>
+                
+                <div> <h4> <Link to={"/page/" + this.props.file}  meta={this.props.meta}> Read More </Link> </h4>  </div> 
+                
                 
             </div>
         );
@@ -233,18 +275,20 @@ const PageLayout = styled.div`
         grid-auto-columns: minmax(100px,auto);
         grid-column-gap:  1em;
         grid-row-gap: 1em;
-        padding: 0 20px;
+        //padding: 0 20px;
 
 
     & > div {
-      //  background: #929fad;
-        padding: 1em;
+       // background: #929fad;
+        width:auto;
+        //padding: 1em;
 
     
       }
     
       & > div:nth-child(odd){
        // background: #e3e7ea;
+        width:auto;
       }
     
 
@@ -305,7 +349,7 @@ class Page extends React.Component {
     render (){
       
         return (
-            <PageLayout>
+            <PageLayout><Link to="/">Go Home Again:  </Link>
                 <PageHeading><center><h1>  {this.getPageMeta()["title"]} </h1></center></PageHeading>
                 <div/>
                 <PageContent dangerouslySetInnerHTML={{ __html:md.render(getContent(this.state.article))  }}/>

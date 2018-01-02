@@ -7472,9 +7472,11 @@ function updateLink (link, options, obj) {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n\n\n'], ['\n\n\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n'], ['\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  \n  \n'], ['\n  \n  \n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n  display: grid; \n  grid-template-columns: 1fr;\n  grid-auto-columns: minmax(100px,auto);\n  grid-column-gap:  1em;\n  grid-row-gap: 1em;\n  padding: 0 20px;\n\n  & > div {\n    //background: #eee;\n    padding: 1em;\n\n  }\n\n  & > div:nth-child(odd){\n    //background: #ddd;\n  }\n\n  \n  \n'], ['\n  display: grid; \n  grid-template-columns: 1fr;\n  grid-auto-columns: minmax(100px,auto);\n  grid-column-gap:  1em;\n  grid-row-gap: 1em;\n  padding: 0 20px;\n\n  & > div {\n    //background: #eee;\n    padding: 1em;\n\n  }\n\n  & > div:nth-child(odd){\n    //background: #ddd;\n  }\n\n  \n  \n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n\tdisplay: flex;\n\tflex-direction: row; \n\n'], ['\n\tdisplay: flex;\n\tflex-direction: row; \n\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\ndisplay: inline-block;\npadding: 1rem;\nfont-size: 1em;\n'], ['\ndisplay: inline-block;\npadding: 1rem;\nfont-size: 1em;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n'], ['\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n  \n  \n'], ['\n  \n  \n']),
+    _templateObject6 = _taggedTemplateLiteral(['\n  display: grid; \n  grid-template-columns: 1fr;\n  grid-auto-columns: minmax(100px,auto);\n  grid-column-gap:  1em;\n  grid-row-gap: 1em;\n  //padding: 0 20px;\n\n  & > div {\n   // background: #eee;\n   // padding: 1em;\n   //text-align: center;\n   width: 100%;\n\n  }\n\n  & > div:nth-child(odd){\n   // background: #ddd;\n    //text-align: center;\n    width: 100%;\n  }\n\n'], ['\n  display: grid; \n  grid-template-columns: 1fr;\n  grid-auto-columns: minmax(100px,auto);\n  grid-column-gap:  1em;\n  grid-row-gap: 1em;\n  //padding: 0 20px;\n\n  & > div {\n   // background: #eee;\n   // padding: 1em;\n   //text-align: center;\n   width: 100%;\n\n  }\n\n  & > div:nth-child(odd){\n   // background: #ddd;\n    //text-align: center;\n    width: 100%;\n  }\n\n']);
 
 var _react = __webpack_require__(0);
 
@@ -7506,6 +7508,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 __webpack_require__(146);
 __webpack_require__(149);
+//require("!style-loader!css-loader!./css/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.min.css");
+
 
 var STORE = new _app.Store();
 var AppContext = { "store": STORE };
@@ -7555,10 +7559,15 @@ var Eraror = function (_React$Component) {
 }(_react2.default.Component);
 
 var Header = _styledComponents2.default.div(_templateObject);
-var Content = _styledComponents2.default.div(_templateObject2);
-var Footer = _styledComponents2.default.div(_templateObject3);
 
-var Layout = _styledComponents2.default.div(_templateObject4);
+var Nav = _styledComponents2.default.div(_templateObject2);
+
+var NavItem = _styledComponents2.default.div(_templateObject3);
+
+var Content = _styledComponents2.default.div(_templateObject4);
+var Footer = _styledComponents2.default.div(_templateObject5);
+
+var Layout = _styledComponents2.default.div(_templateObject6);
 
 var App = function (_React$Component2) {
   _inherits(App, _React$Component2);
@@ -7576,15 +7585,6 @@ var App = function (_React$Component2) {
         Layout,
         null,
         _react2.default.createElement(
-          Header,
-          null,
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/' },
-            'Go Home Again:  '
-          )
-        ),
-        _react2.default.createElement(
           Content,
           null,
           _react2.default.createElement(
@@ -7598,11 +7598,6 @@ var App = function (_React$Component2) {
               } }),
             _react2.default.createElement(_reactRouterDom.Route, { component: Error })
           )
-        ),
-        _react2.default.createElement(
-          Footer,
-          null,
-          'Footer'
         )
       );
     }
@@ -24927,9 +24922,11 @@ exports.Store = exports.Page = exports.Index = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n\n        display: grid; \n        /*grid-template-columns: 1fr  1fr 1fr ;*/\n        grid-template-columns: 1fr  minmax(auto,50em) 1fr ;\n        grid-auto-columns: minmax(100px,auto);\n        grid-column-gap:  1em;\n        grid-row-gap: 1em;\n        padding: 0 20px;\n\n\n    & > div {\n      //  background: #929fad;\n        padding: 1em;\n\n    \n      }\n    \n      & > div:nth-child(odd){\n       // background: #e3e7ea;\n      }\n    \n\n    '], ['\n\n        display: grid; \n        /*grid-template-columns: 1fr  1fr 1fr ;*/\n        grid-template-columns: 1fr  minmax(auto,50em) 1fr ;\n        grid-auto-columns: minmax(100px,auto);\n        grid-column-gap:  1em;\n        grid-row-gap: 1em;\n        padding: 0 20px;\n\n\n    & > div {\n      //  background: #929fad;\n        padding: 1em;\n\n    \n      }\n    \n      & > div:nth-child(odd){\n       // background: #e3e7ea;\n      }\n    \n\n    ']),
-    _templateObject2 = _taggedTemplateLiteral([' \n    grid-column: 1/4;\n'], [' \n    grid-column: 1/4;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n      grid-column: 2/3;\n'], ['\n      grid-column: 2/3;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n\n\n'], ['\n\n\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    & > div {\n        padding-right: 1em;        \n        //background: #929fad;\n         width:auto;\n         align-self: center;\n\n     \n       }\n     \n       & > div:nth-child(odd){\n        padding-right: 1em;\n        align-self: center;\n\n        //background: #e3e7ea;\n         width:auto;\n       }\n'], ['\n    display: flex;\n    & > div {\n        padding-right: 1em;        \n        //background: #929fad;\n         width:auto;\n         align-self: center;\n\n     \n       }\n     \n       & > div:nth-child(odd){\n        padding-right: 1em;\n        align-self: center;\n\n        //background: #e3e7ea;\n         width:auto;\n       }\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n\n        display: grid; \n        /*grid-template-columns: 1fr  1fr 1fr ;*/\n        grid-template-columns: 1fr  minmax(auto,50em) 1fr ;\n        grid-auto-columns: minmax(100px,auto);\n        grid-column-gap:  1em;\n        grid-row-gap: 1em;\n        //padding: 0 20px;\n\n\n    & > div {\n       // background: #929fad;\n        width:auto;\n        //padding: 1em;\n\n    \n      }\n    \n      & > div:nth-child(odd){\n       // background: #e3e7ea;\n        width:auto;\n      }\n    \n\n    '], ['\n\n        display: grid; \n        /*grid-template-columns: 1fr  1fr 1fr ;*/\n        grid-template-columns: 1fr  minmax(auto,50em) 1fr ;\n        grid-auto-columns: minmax(100px,auto);\n        grid-column-gap:  1em;\n        grid-row-gap: 1em;\n        //padding: 0 20px;\n\n\n    & > div {\n       // background: #929fad;\n        width:auto;\n        //padding: 1em;\n\n    \n      }\n    \n      & > div:nth-child(odd){\n       // background: #e3e7ea;\n        width:auto;\n      }\n    \n\n    ']),
+    _templateObject4 = _taggedTemplateLiteral([' \n    grid-column: 1/4;\n'], [' \n    grid-column: 1/4;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n      grid-column: 2/3;\n'], ['\n      grid-column: 2/3;\n']);
 
 var _react = __webpack_require__(0);
 
@@ -25086,6 +25083,11 @@ var Index = function (_React$Component) {
                 _react2.default.createElement(
                     PageContent,
                     null,
+                    _react2.default.createElement(
+                        'h1',
+                        null,
+                        ' Posts '
+                    ),
                     _react2.default.createElement(Toc, { index: '/content/index.json' })
                 )
             );
@@ -25099,6 +25101,8 @@ var Index = function (_React$Component) {
 
     return Index;
 }(_react2.default.Component);
+
+var Card = _styledComponents2.default.div(_templateObject);
 
 var Toc = function (_React$Component2) {
     _inherits(Toc, _React$Component2);
@@ -25133,16 +25137,17 @@ var Toc = function (_React$Component2) {
             var contents = _react2.default.createElement('div', null);
             if (this.state.index != null) {
                 contents = this.state.index.map(function (entry) {
-                    console.log(entry);
-                    return _react2.default.createElement(PageSummary, { title: entry.title, date: entry.date, file: entry.file, meta: entry });
+                    return _react2.default.createElement(
+                        Card,
+                        null,
+                        _react2.default.createElement(PageSummary, { title: entry.title, date: entry.date, file: entry.file, meta: entry })
+                    );
                 });
             }
 
             return _react2.default.createElement(
                 'div',
                 null,
-                ' ',
-                this.props.index,
                 contents
             );
         }
@@ -25183,6 +25188,8 @@ function getContent(article) {
     return article.content;
 }
 
+var Row = _styledComponents2.default.div(_templateObject2);
+
 var PageSummary = function (_React$Component3) {
     _inherits(PageSummary, _React$Component3);
 
@@ -25196,28 +25203,70 @@ var PageSummary = function (_React$Component3) {
         key: 'render',
         value: function render() {
             console.log(this.props.file);
+            function assetLinks(meta) {
+
+                if (meta.assets != "") {
+                    return _react2.default.createElement(
+                        'div',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: '/assets' },
+                            ' ',
+                            _react2.default.createElement(
+                                'i',
+                                { 'class': 'fa fa-files-o fa-1x' },
+                                '  '
+                            ),
+                            ' '
+                        )
+                    );
+                }
+                return _react2.default.createElement('div', null);
+            }
+
+            var assets = assetLinks(this.props.meta);
             return _react2.default.createElement(
                 'div',
                 null,
                 _react2.default.createElement(
+                    Row,
+                    null,
+                    _react2.default.createElement(
+                        'div',
+                        null,
+                        ' ',
+                        _react2.default.createElement(
+                            'h3',
+                            null,
+                            this.props.title,
+                            '  '
+                        ),
+                        ' '
+                    ),
+                    assets
+                ),
+                _react2.default.createElement(
                     'div',
                     null,
-                    ' ',
-                    this.props.date,
-                    ' '
+                    this.props.meta.preview
                 ),
                 _react2.default.createElement(
                     'div',
                     null,
                     ' ',
                     _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: "/page/" + this.props.file, meta: this.props.meta },
+                        'h4',
+                        null,
                         ' ',
-                        this.props.title,
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { to: "/page/" + this.props.file, meta: this.props.meta },
+                            ' Read More '
+                        ),
                         ' '
                     ),
-                    ' '
+                    '  '
                 )
             );
         }
@@ -25229,11 +25278,11 @@ var PageSummary = function (_React$Component3) {
 //<div dangerouslySetInnerHTML={{ __html: md.render("# I fugging rule biyeeeetch!") }} />
 
 
-var PageLayout = _styledComponents2.default.div(_templateObject);
+var PageLayout = _styledComponents2.default.div(_templateObject3);
 
-var PageHeading = _styledComponents2.default.div(_templateObject2);
+var PageHeading = _styledComponents2.default.div(_templateObject4);
 
-var PageContent = _styledComponents2.default.div(_templateObject3);
+var PageContent = _styledComponents2.default.div(_templateObject5);
 
 var Page = function (_React$Component4) {
     _inherits(Page, _React$Component4);
@@ -25286,6 +25335,11 @@ var Page = function (_React$Component4) {
             return _react2.default.createElement(
                 PageLayout,
                 null,
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/' },
+                    'Go Home Again:  '
+                ),
                 _react2.default.createElement(
                     PageHeading,
                     null,
@@ -54199,8 +54253,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -54218,7 +54272,7 @@ exports = module.exports = __webpack_require__(45)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n    font-family: 'Raleway', Serif; \n    \n}\n\nh1, .h2, .h3, h1, h2, h3 {\n    margin-top: 20px;\n    margin-bottom: 10px;\n}\n\n.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {\n    font-family: inherit;\n    font-weight: 500;\n    line-height: 1.1;\n    color: inherit;\n}\n\ncode  {\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n}\n\nimg {\n    display: block;\n    max-width:600px;\n}\n\n\n\npre {\n    padding: 0.5em;\n    background: #282c34;\n    width:600px; \n    white-space: pre-wrap;       /* Since CSS 2.1 */\n    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */\n    white-space: -pre-wrap;      /* Opera 4-6 */\n    white-space: -o-pre-wrap;    /* Opera 7 */\n    word-wrap: break-word;       /* Internet Explorer 5.5+ */\n}\n\n\n", ""]);
+exports.push([module.i, "body {\n    font-family: 'Raleway', Serif; \n    \n}\n\nh1, .h2, .h3, h1, h2, h3 {\n    margin-top: 20px;\n    margin-bottom: 10px;\n}\n\n.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {\n    font-family: inherit;\n    font-weight: 500;\n    line-height: 1.1;\n    color: inherit;\n}\n\ni {\n    color:rgb(27, 151, 155);\n    padding-top: 5px;\n}\n\ncode  {\n    overflow-x: auto;\n    padding: 0.5em;\n    color: #abb2bf;\n}\n\nimg {\n    display: block;\n    max-width:600px;\n}\n\n\n\npre {\n    padding: 0.5em;\n    background: #282c34;\n    width:600px; \n    white-space: pre-wrap;       /* Since CSS 2.1 */\n    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */\n    white-space: -pre-wrap;      /* Opera 4-6 */\n    white-space: -o-pre-wrap;    /* Opera 7 */\n    word-wrap: break-word;       /* Internet Explorer 5.5+ */\n}\n\n\na {\n    color: #337ab7;\n    text-decoration: none\n}\na:hover {\n    color: #175081\n}\n", ""]);
 
 // exports
 
