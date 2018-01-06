@@ -1,6 +1,6 @@
 name: dit_getting_started
 title: Getting Started
-date: 2018-01-02 14:35:54.319411
+date: 2018-01-06 14:47:41.416816
 package: pkg_readme
 assets: config.json,bin,setup.py,pkg_readme
 ---

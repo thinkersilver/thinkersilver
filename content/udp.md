@@ -1,8 +1,8 @@
 name: udp
 title: Universal Dependency Manager (POC)
-date: 2018-01-06 14:08:06.864874
+date: 2018-01-06 15:06:06.872313
 package: udp
-assets: udp,bin,setup.py
+assets: config.json,udp,bin,setup.py
 ---
 # Universal Dependency Manager 
 ![](/images/udp_trees_600.png)
