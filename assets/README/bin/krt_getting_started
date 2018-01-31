@@ -1,0 +1,3 @@
+#!/usr/bin/python
+
+from krt_getting_started import *
